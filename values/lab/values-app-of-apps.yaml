@@ -30,7 +30,7 @@ apps:
 # Namespaces required by the apps
 generateManagedNamespaces: false
 managed_namespaces: 
-  - openshift-operators
+  - ansible-automation-platform
 
 argocd:
   enabled: true
