@@ -9,7 +9,7 @@ spec:
   sourceRepos:
     - '{{ $.Values.helmRepoUrl }}'
   destinations:
-{{- range $ns := $.Values.namespaces }}
+{{- range $ns := $.Values.managed_namespaces }}
     - namespace: {{ $ns }}
       server: https://kubernetes.default.svc
 {{- end }}  
