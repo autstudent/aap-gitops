@@ -1,0 +1,13 @@
+{{- if $.Values.render }}
+{{- range $key, $val := $.Values.operators }}
+{{ - if $val.namespace }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    openshift.io/cluster-monitoring: "true"
+  name: {{ $val.namespace }}
+{{- end }}
+{{- end }}
+{{- end }}
