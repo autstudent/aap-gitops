@@ -20,7 +20,7 @@ apps:
     enabled: true
     helm:
       valueFiles: 
-        - values/lab/values-ocp-solutions.yaml
+        - ../../values/lab/values-ocp-solutions.yaml
 
 # Namespaces required by the apps
 namespaces:

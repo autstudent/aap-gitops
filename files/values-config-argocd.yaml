@@ -20,7 +20,7 @@ apps:
     enabled: true
     helm:
       valueFiles: 
-        - values/lab/values-app-of-apps.yaml
+        - ../../values/lab/values-app-of-apps.yaml
   # app-of-apps-prod:
   #   path: charts/argocd
   #   branch: main
