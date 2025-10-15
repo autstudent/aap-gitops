@@ -25,3 +25,7 @@ apps:
 # Namespaces required by the apps
 namespaces:
   - app-of-apps
+
+argocd:
+  enabled: true
+  controller: openshift-gitops
