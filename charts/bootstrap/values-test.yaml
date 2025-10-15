@@ -8,14 +8,6 @@ render: true
 
 # Operators
 operators:
-  gitops:
-    enabled: true
-    channel: latest
-    approval: Automatic
-    name: openshift-gitops-operator
-    namespace: openshift-gitops-operator
-    source: redhat-operators
-    sourcenamespace: openshift-marketplace
   aap:
     enabled: true
     channel: stable-2.6

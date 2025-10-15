@@ -8,3 +8,8 @@ render: false
 
 # Operators
 operators: {}
+
+# ArgoCD Operator deployment
+argocd:
+  enabled: true
+  controller: argocd-operator
