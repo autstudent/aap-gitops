@@ -3,7 +3,9 @@
 ##
 
 # Project specifications
-projectName: app-of-apps
+project:
+  name: app-of-apps
+  namespace: openshift-gitops
 
 # ArgoCD Operator deployment
 argocd:

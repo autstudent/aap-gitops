@@ -2,8 +2,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: {{ $.Values.projectName }}
-  namespace: {{ $.Values.argocd.namespace }}
+  name: {{ $.Values.project.name }}
+  namespace: {{ $.Values.project.namespace }}
 spec:
   description: Jump App CI/CD, GitOps, ServiceMesh and so on
   sourceRepos:

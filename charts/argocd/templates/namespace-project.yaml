@@ -1,0 +1,11 @@
+{{- if $.Values.project.generateNamespace }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $.Values.project.namespace }}
+{{- if $.Values.argocd.enabled }}
+  labels:
+    argocd.argoproj.io/managed-by: {{ $.Values.argocd.controller }}
+{{- end }}
+{{- end }}

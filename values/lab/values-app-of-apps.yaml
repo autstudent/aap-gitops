@@ -3,7 +3,9 @@
 ##
 
 # Project specifications
-projectName: ocp-gitops
+project:
+  name: bootstrap
+  namespace: app-of-apps
 
 # ArgoCD Operator deployment
 argocd:
