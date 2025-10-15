@@ -11,7 +11,7 @@ project:
 # ArgoCD Operator deployment
 argocd:
   enabled: true
-  controller: argocd-operator
+  controller: openshift-gitops
 
 # Helm Repo GIT
 helmRepoUrl: https://github.com/acidonper/jump-app-gitops.git

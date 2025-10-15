@@ -10,7 +10,7 @@ project:
 # ArgoCD Operator deployment
 argocd:
   enabled: true
-  controller: argocd-operator
+  controller: openshift-gitops
   namespace: openshift-gitops
 
 # Helm Repo GIT
