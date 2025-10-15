@@ -15,7 +15,3 @@ operators:
     name: ansible-automation-platform-operator
     source: redhat-operators
     sourcenamespace: openshift-marketplace
-
-argocd:
-  enabled: true
-  controller: openshift-gitops

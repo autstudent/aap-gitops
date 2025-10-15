@@ -7,7 +7,7 @@ echo "Setting Up Jump App stuff in Openshift..."
 
 # Install Operators
 echo "Installing ArgoCD operator..."
-helm template ./charts/ocp-solutions -f ./files/values-install-argocd.yaml --debug | oc apply -f -
+helm template ./charts/bootstrap -f ./files/values-install-argocd.yaml --debug | oc apply -f -
 sleep 60
 
 # Apply chart template
