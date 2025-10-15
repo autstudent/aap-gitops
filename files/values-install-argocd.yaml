@@ -1,0 +1,23 @@
+##
+# Jump App Openshift Cluster Bootstrap
+##
+
+# Control rendering of this chart
+# If set to false, this chart will not be rendered
+render: true
+
+# Operator
+operators:
+  openshift-gitops-operator:
+    enabled: true
+    channel: latest
+    approval: Automatic
+    name: openshift-gitops-operator
+    namespace: openshift-gitops-operator
+    source: redhat-operators
+    sourcenamespace: openshift-marketplace
+    argodefaultinstance: false
+
+argocd:
+  enabled: true
+  controller: openshift-gitops

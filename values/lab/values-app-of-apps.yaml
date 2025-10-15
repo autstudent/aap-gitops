@@ -1,0 +1,27 @@
+##
+# Jump App ArgoCD Chart values
+##
+
+# Install an additional ArgoCD instance (*Recommended true when Openshift GitOps operator is installed)
+argocdOCPInstance: true
+argocdNamespace: openshift-gitops
+
+# Helm Repo GIT
+helmRepoUrl: https://github.com/autstudent/aap-gitops
+
+# Project specifications
+projectName: ocp-gitops
+
+# ArgoCD apps definition
+apps:
+  ocp-solutions:
+    path: charts/ocp-solutions
+    branch: main
+    enabled: true
+    helm:
+      valueFiles: 
+        - values/lab/values-ocp-solutions.yaml
+
+# Namespaces required by the apps
+namespaces:
+  - app-of-apps

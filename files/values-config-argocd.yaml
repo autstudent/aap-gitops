@@ -1,0 +1,34 @@
+##
+# Jump App ArgoCD Chart values
+##
+
+# Install an additional ArgoCD instance (*Recommended true when Openshift GitOps operator is installed)
+argocdOCPInstance: true
+argocdNamespace: openshift-gitops
+
+# Helm Repo GIT
+helmRepoUrl: https://github.com/acidonper/jump-app-gitops.git
+
+# Project specifications
+projectName: app-of-apps
+
+# ArgoCD apps definition
+apps:
+  app-of-apps-lab:
+    path: charts/argocd
+    branch: main
+    enabled: true
+    helm:
+      valueFiles: 
+        - values/lab/values-app-of-apps.yaml
+  # app-of-apps-prod:
+  #   path: charts/argocd
+  #   branch: main
+  #   enabled: true
+  #   helm:
+  #     valueFiles: 
+  #       - values/prod/values-app-of-apps.yaml
+
+# Namespaces required by the apps
+namespaces:
+  - app-of-apps

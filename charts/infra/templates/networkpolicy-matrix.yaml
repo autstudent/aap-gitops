@@ -1,0 +1,15 @@
+{{- range $key, $val := $.Values.networking }}
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: "{{ $key }}"
+  namespace: "{{ $val.dest }}"
+spec:
+  podSelector: {}
+  ingress:
+    - from:
+      - namespaceSelector:
+          matchLabels:
+            project: "{{ $val.orig }}"
+{{- end}}

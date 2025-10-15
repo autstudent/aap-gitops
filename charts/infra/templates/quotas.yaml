@@ -1,0 +1,21 @@
+{{- range $key, $val := $.Values.namespaces }}
+{{- if $val.quotas.enabled }}
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: "{{ $key }}-quota"
+  namespace: "{{ $key }}"
+spec:
+  hard:
+{{- if $val.quotas.resources }}
+  {{- range $resource, $value := $val.quotas.resources }}
+    {{ $resource }}: {{ $value }}
+  {{- end }}
+{{- else }}
+  {{- range $resource, $value := $.Values.quotas_default.resources }}
+    {{ $resource }}: {{ $value }}
+  {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}

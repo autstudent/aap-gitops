@@ -1,0 +1,30 @@
+quotas_default:
+  resources:
+    pods: "4"
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
+    configmaps: "10"
+    persistentvolumeclaims: "4"
+    replicationcontrollers: "20"
+    secrets: "10"
+    services: "10"
+    services.loadbalancers: "2"
+  
+namespaces:
+  jump-app-dev:
+    networkpolicy:
+      enabled: true
+    quotas:
+      enabled: true
+      resources:
+        secrets: "10"
+        services: "10"
+        services.loadbalancers: "2"
+
+networking: {}
+
+argocd:
+  enabled: true
+  controller: openshift-gitops

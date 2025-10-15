@@ -1,0 +1,30 @@
+{{- range $key, $val := $.Values.namespaces }}
+{{- if $val.networkpolicy.enabled }}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-from-openshift-ingress
+  namespace: "{{ $key }}" 
+spec:
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          policy-group.network.openshift.io/ingress: ""
+  podSelector: {}
+  policyTypes:
+  - Ingress
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-same-namespace
+  namespace: "{{ $key }}" 
+spec:
+  podSelector: {}
+  ingress:
+  - from:
+    - podSelector: {}
+{{- end }}
+{{- end }}
