@@ -1,6 +1,6 @@
 {{- if $.Values.render }}
 {{- range $key, $val := $.Values.operators }}
-{{ - if $val.namespace }}
+{{- if $val.namespace }}
 ---
 apiVersion: v1
 kind: Namespace
