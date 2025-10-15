@@ -20,5 +20,6 @@ helmRepoUrl: https://github.com/acidonper/jump-app-gitops.git
 apps: {}
 
 # Namespaces handled by Helm
+generateManagedNamespaces: false
 managed_namespaces: []
 

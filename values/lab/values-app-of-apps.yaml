@@ -28,7 +28,8 @@ apps:
         - ../../values/lab/values-aap.yaml
 
 # Namespaces required by the apps
-namespaces: 
+generateManagedNamespaces: true
+managed_namespaces: 
   - aap
 
 argocd:

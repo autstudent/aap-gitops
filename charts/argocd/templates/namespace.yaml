@@ -1,4 +1,5 @@
-{{- range $.Values.namespaces }}
+{{- if $.Values.generateManagedNamespace }}
+{{- range $.Values.managed_namespaces }}
 ---
 apiVersion: v1
 kind: Namespace
@@ -7,5 +8,6 @@ metadata:
 {{- if $.Values.argocd.enabled }}
   labels:
     argocd.argoproj.io/managed-by: {{ $.Values.argocd.controller }}
+{{- end }}
 {{- end }}
 {{- end }}

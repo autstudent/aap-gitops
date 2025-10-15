@@ -19,7 +19,7 @@ helmRepoUrl: https://github.com/autstudent/aap-gitops
 # ArgoCD apps definition
 apps:
   app-of-apps-lab:
-    namespace: app-of-apps
+    namespace: openshift-gitops
     path: charts/argocd
     branch: main
     enabled: true
@@ -35,8 +35,8 @@ apps:
   #       - values/prod/values-app-of-apps.yaml
 
 # Namespaces required by the apps (*Should be the same as projectName)
-namespaces:
-  - app-of-apps
+managed_namespaces: 
+  - openshift-gitops
 
 argocd:
   enabled: true

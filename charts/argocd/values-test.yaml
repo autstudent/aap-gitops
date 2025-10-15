@@ -31,6 +31,7 @@ apps:
         - values-quay-sm.yaml
 
 # Namespaces handled by ArgoCD Applications
-namespaces:
+generateManagedNamespaces: false
+managed_namespaces:
   - aap
 
