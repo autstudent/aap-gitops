@@ -17,7 +17,3 @@ operators:
     source: redhat-operators
     sourcenamespace: openshift-marketplace
     argodefaultinstance: false
-
-argocd:
-  enabled: true
-  controller: openshift-gitops
