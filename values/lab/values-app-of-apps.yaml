@@ -5,7 +5,7 @@
 # Project specifications
 project:
   name: bootstrap
-  namespace: app-of-apps
+  namespace: openshift-gitops
 
 # ArgoCD Operator deployment
 argocd:
