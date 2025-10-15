@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: {{ $key }}
+    namespace: {{ $.Values.projectName }}
     server: 'https://kubernetes.default.svc'
   source:
 {{- if $val.helm }}
