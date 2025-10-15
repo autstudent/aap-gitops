@@ -25,6 +25,14 @@ apps:
     enabled: true
     helm:
       valueFiles: 
+        - ../../values/lab/values-operators.yaml
+  aap:
+    namespace: ansible-automation-platform
+    path: charts/aap
+    branch: main
+    enabled: true
+    helm:
+      valueFiles: 
         - ../../values/lab/values-aap.yaml
 
 # Namespaces required by the apps

@@ -1,0 +1,29 @@
+{{- if $.Values.render }}
+apiVersion: aap.ansible.com/v1alpha1
+kind: AnsibleAutomationPlatform
+metadata:
+  name: {{ $.Values.aap.name }}
+  namespace: {{ $.Values.aap.namespace }}
+spec:
+  controller:
+    disabled: false
+  database:
+    idle_disabled: false
+    postgres_data_volume_init: false
+    resource_requirements:
+      requests:
+        cpu: {{ $.Values.db.requirements.requests.cpu }}
+        memory: {{ $.Values.db.requirements.requests.memory }}
+    storage_requirements:
+      requests:
+        storage: {{ $.Values.db.requirements.requests.storage | default "8Gi" }}
+  eda:
+    disabled: false
+  hub:
+    disabled: true
+  lightspeed:
+    disabled: true
+  no_log: true
+  redis_mode: standalone
+  route_tls_termination_mechanism: Edge
+{{- end }}
