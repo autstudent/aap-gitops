@@ -7,7 +7,7 @@ argocdOCPInstance: true
 argocdNamespace: openshift-gitops
 
 # Helm Repo GIT
-helmRepoUrl: https://github.com/acidonper/jump-app-gitops.git
+helmRepoUrl: https://github.com/autstudent/aap-gitops
 
 # Project specifications
 projectName: app-of-apps
@@ -29,6 +29,6 @@ apps:
   #     valueFiles: 
   #       - values/prod/values-app-of-apps.yaml
 
-# Namespaces required by the apps
+# Namespaces required by the apps (*Should be the same as projectName)
 namespaces:
   - app-of-apps
