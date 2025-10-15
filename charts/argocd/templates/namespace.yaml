@@ -1,4 +1,4 @@
-{{- if $.Values.generateManagedNamespace }}
+{{- if $.Values.generateManagedNamespaces }}
 {{- range $.Values.managed_namespaces }}
 ---
 apiVersion: v1
