@@ -19,7 +19,7 @@ helmRepoUrl: https://github.com/autstudent/aap-gitops
 # ArgoCD apps definition
 apps:
   bootstrap:
-    namespace: aap
+    namespace: openshift-gitops
     path: charts/bootstrap
     branch: main
     enabled: true
@@ -28,9 +28,9 @@ apps:
         - ../../values/lab/values-aap.yaml
 
 # Namespaces required by the apps
-generateManagedNamespaces: true
+generateManagedNamespaces: false
 managed_namespaces: 
-  - aap
+  - openshift-gitops
 
 argocd:
   enabled: true
